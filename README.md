@@ -1,6 +1,6 @@
 ﻿# Kalbestore-be (Backend Service)
 
-Kalbestore-fe is a frontend service repository for the Kalbestore application, built using dotnet core. This repository contains the user interface implementation for the Kalbestore web application.
+Kalbestore-be is a backend service repository for the Kalbestore application, built using dotnet core. This repository contains the implementation of the backend service (REST API) for the Kalbestore web application.
 
 ## Installation
 
