@@ -1,5 +1,6 @@
 ﻿using System;
-using DotNetEnv;
+using dotenv.net;
+using dotenv.net.Utilities;
 
 namespace kalbestore_be.utils
 {
@@ -9,13 +10,12 @@ namespace kalbestore_be.utils
 
         static dbconfig()
         {
-            Env.Load(); // Load values from .env file
-
             // Get values from .env file or use default values
-            string host = Env.GetString("DB_HOST", "localhost");
-            string username = Env.GetString("DB_USERNAME", "postgres");
-            string password = Env.GetString("DB_PASSWORD", "postgres");
-            string database = Env.GetString("DB_DATABASE", "kalbe");
+            DotEnv.Load();
+            string host = EnvReader.GetStringValue("DB_HOST");
+            string username = EnvReader.GetStringValue("DB_USERNAME");
+            string password = EnvReader.GetStringValue("DB_PASSWORD");
+            string database = EnvReader.GetStringValue("DB_DATABASE");
 
             ConnectionString = $"Host={host};Username={username};Password={password};Database={database}";
         }
